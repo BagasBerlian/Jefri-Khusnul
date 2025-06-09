@@ -710,7 +710,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
-  filter: brightness(95%);
+  filter: brightness(100%);
   transition: filter 0.8s ease-in-out;
 }
 
