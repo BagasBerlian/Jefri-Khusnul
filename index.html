@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Kami</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="loading-screen">
+        <div class="spinner">
+            <div class="heart-shape"></div>
+        </div>
+        <p>Memuat Undangan...</p>
+    </div>
+
+    <!-- Envelope Section -->
+    <div class="envelope-section">
+        <div class=" envelope-wrapper">
+            <div
+                class="envelope animate__animated animate__zoomIn">
+                <div class="envelope-front">
+                    <div class="stamp"><i
+                            class="fas fa-heart"></i>
+                    </div>
+                    <div class="to-name">Kepada:
+                        <span
+                            id="guest-name">Anda</span>
+                    </div>
+                    <div class="hint">Klik untuk
+                        membuka</div>
+                </div>
+                <div class="envelope-back"></div>
+                <div class="envelope-flap"></div>
+            </div>
+            <div class="hearts"></div>
+        </div>
+    </div>
+
+    <!-- Invitation Card Section -->
+    <div class="invitation-card-section"
+        style="display: none;">
+        <div class="invitation-card">
+            <div class="card-front">
+                <div
+                    class="card-decoration top-left">
+                </div>
+                <div
+                    class="card-decoration top-right">
+                </div>
+                <div
+                    class="card-decoration bottom-left">
+                </div>
+                <div
+                    class="card-decoration bottom-right">
+                </div>
+
+                <div class="card-content">
+                    <h1 class="couple-name">Jefri
+                        &amp; Khusnul</h1>
+                    <p class="invitation-text">
+                        Dengan penuh kebahagiaan,
+                        kami mengundang Anda untuk
+                        hadir dalam acara
+                        pernikahan kami</p>
+                    <div
+                        class="open-invitation-btn">
+                        <span>Buka Undangan</span>
+                        <i
+                            class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wedding Landing Page -->
+    <div class="wedding-landing"
+        style="display: none;">
+        <header class="wedding-header">
+            <div class="overlay"></div>
+            <div class="header-content">
+                <h3 class="intro-text ">
+                    Pernikahan Dari</h3>
+                <h1 class="wedding-title">
+                    Jefri
+                    &amp;
+                    Khusnul
+                </h1>
+                <p class="wedding-date">Akan
+                    melangsungkan akad pernikahan
+                    dalam:</p>
+                <div id="countdown-timer"
+                    class="countdown-timer">
+                    <div class="timer-box">
+                        <span
+                            id="countdown-days">00</span>
+                        <p>Hari</p>
+                    </div>
+                    <div class="timer-box">
+                        <span
+                            id="countdown-hours">00</span>
+                        <p>Jam</p>
+                    </div>
+                    <div class="timer-box">
+                        <span
+                            id="countdown-minutes">00</span>
+                        <p>Menit</p>
+                    </div>
+                    <div class="timer-box">
+                        <span
+                            id="countdown-seconds">00</span>
+                        <p>Detik</p>
+                    </div>
+                </div>
+                <p class="wedding-date">Rabu, 25
+                    Juni
+                    2025</p>
+            </div>
+        </header>
+
+        <section class="verse-section">
+            <div class="verse-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+
+            <p class="verse-arabic">
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ
+                مِنْ
+                أَنْفُسِكُمْ أَزْوَاجًا
+                لِتَسْكُنُوا
+                إِلَيْهَا وَجَعَلَ بَيْنَكُمْ
+                مَوَدَّةً
+                وَرَحْمَةً
+            </p>
+
+            <blockquote class="verse-text">
+                "Dan di antara tanda-tanda
+                kekuasaan-Nya
+                ialah Dia menciptakan untukmu
+                pasangan
+                hidup dari jenismu sendiri, supaya
+                kamu
+                mendapat ketenangan hati dan Dia
+                menjadikan kasih sayang di antara
+                kamu."
+            </blockquote>
+            <p class="verse-source">(QS. Ar-Rum:
+                21)</p>
+        </section>
+
+        <section class="couple-profile-section">
+            <h2 class="section-title script-font">
+                Assalamualaikum Warahmatullahi
+                Wabarakatuh
+            </h2>
+            <p class="section-subtitle">
+                Dengan memohon rahmat dan ridho
+                Allah SWT,
+                kami bermaksud menyelenggarakan
+                pernikahan
+                putra-putri kami:
+            </p>
+
+            <div class="profiles-container">
+
+                <div class="profile-card groom">
+                    <div
+                        class="profile-image-container">
+                        <img src="assets/cowok-1.JPG"
+                            alt="Mempelai Pria Jefri">
+                    </div>
+                    <h3
+                        class="profile-name script-font">
+                        Jefri Dwi Setiawan</h3>
+                    <p class="profile-parents">
+                        Putra dari Bapak Suparto
+                        (Alm)
+                        <br>& Ibu Lami'ah
+                    </p>
+                    <p class="profile-address">
+                        <i
+                            class="fas fa-map-marker-alt"></i>
+                        Dsn. Pelang, Ds. Pelang,
+                        Kec.
+                        Kembangbahu, Lamongan
+                    </p>
+                </div>
+
+                <div
+                    class="profile-separator script-font">
+                    &</div>
+
+                <div class="profile-card bride">
+                    <div
+                        class="profile-image-container">
+                        <img src="assets/cewek-1.jpg"
+                            alt="Mempelai Wanita Khusnul">
+                    </div>
+                    <h3
+                        class="profile-name script-font">
+                        Khusnul Khotimah</h3>
+                    <p class="profile-parents">
+                        Putri dari Bapak Suwar
+                        <br>& Ibu
+                        Sartini
+                    </p>
+                    <p class="profile-address">
+                        <i
+                            class="fas fa-map-marker-alt"></i>
+                        Dsn. Kedungbulu, Ds.
+                        Dumpiagung,
+                        Kec. Kembangbahu, Lamongan
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="section-title script-font">
+                Momen
+                Bahagia Kami</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item item-1">
+                    <img src="assets/header-1.jpg"
+                        alt="Galeri Foto 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="assets/cewek-1.jpg"
+                        alt="Galeri Foto 2">
+                </div>
+                <div
+                    class="gallery-item gallery-text-item">
+                    <p class="gallery-quote">
+                        "Cinta adalah
+                        ketika kebahagiaan orang
+                        lain
+                        lebih penting dari
+                        kebahagiaanmu
+                        sendiri."</p>
+                    <span
+                        class="gallery-signature">-
+                        H.
+                        Jackson Brown, Jr.</span>
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="assets/cowok-1.JPG"
+                        alt="Galeri Foto 3">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="assets/header-1.jpg"
+                        alt="Galeri Foto 4">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="assets/cewek-1.jpg"
+                        alt="Galeri Foto 5">
+                </div>
+                <div class="gallery-item item-6">
+                    <img src="assets/cowok-1.JPG"
+                        alt="Galeri Foto 6">
+                </div>
+                <div class="gallery-item item-7">
+                    <img src="assets/header-1.jpg"
+                        alt="Galeri Foto 7">
+                </div>
+                <div class="gallery-item item-8">
+                    <img src="assets/cewek-1.jpg"
+                        alt="Galeri Foto 8">
+                </div>
+                <div class="gallery-item item-9">
+                    <img src="assets/cowok-1.JPG"
+                        alt="Galeri Foto 9">
+                </div>
+                <div class="gallery-item item-10">
+                    <img src="assets/header-1.jpg"
+                        alt="Galeri Foto 10">
+                </div>
+            </div>
+        </section>
+
+        <section class="event-info-section">
+
+            <h2 class="section-title script-font">
+                Informasi Acara</h2>
+
+            <div class="event-frame">
+                <img src="assets/Floral.png"
+                    alt="Hiasan Bunga Kanan Atas"
+                    class="floral-decoration floral-top-right">
+
+                <div class="event-card">
+                    <div class="event-icon"><i
+                            class="fas fa-ring"></i>
+                    </div>
+                    <h3
+                        class="event-title script-font">
+                        Akad Nikah</h3>
+                    <p class="event-date">Rabu
+                        Pon, 25
+                        Juni 2025</p>
+                    <p class="event-time">Pukul
+                        08:00 -
+                        09:00 WIB</p>
+                </div>
+
+                <hr class="event-separator">
+
+                <div class="event-card">
+                    <div class="event-icon"><i
+                            class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3
+                        class="event-title script-font">
+                        Resepsi</h3>
+                    <p class="event-date">Rabu
+                        Pon, 25
+                        Juni 2025</p>
+                    <p class="event-time">Pukul
+                        13:00 WIB
+                        - Selesai</p>
+                    <p class="event-location">
+                        <i
+                            class="fas fa-map-marker-alt"></i>
+                        Dsn. Kedungbulu, Ds.
+                        Dumpiagung,
+                        Kec. Kembangbahu, Lamongan
+                    </p>
+                </div>
+
+                <hr class="event-separator">
+
+                <div class="event-card">
+                    <div class="event-icon"><i
+                            class="fas fa-house-user"></i>
+                    </div>
+                    <h3
+                        class="event-title script-font">
+                        Ngunduh Mantu</h3>
+                    <p class="event-date">Kamis
+                        Wage, 26
+                        Juni 2025</p>
+                    <p class="event-time">Pukul
+                        13:00 WIB
+                        - Selesai</p>
+                    <p class="event-location">
+                        <i
+                            class="fas fa-map-marker-alt"></i>
+                        Dsn. Pelang, Ds. Pelang,
+                        Kec.
+                        Kembangbahu, Lamongan
+                    </p>
+                </div>
+
+                <div class="event-actions">
+                    <a href="https://maps.app.goo.gl/PoXattkLSJjhWrvPA"
+                        target="_blank"
+                        class="cta-button">Lihat
+                        Peta Lokasi</a>
+                    <a href="#"
+                        class="cta-button">Simpan
+                        ke Kalender</a>
+                </div>
+
+                <img src="assets/Floral.png"
+                    alt="Hiasan Bunga Kiri Bawah"
+                    class="floral-decoration floral-bottom-left">
+            </div>
+        </section>
+
+        <section class="rsvp-section">
+            <h2 class="section-title script-font">
+                Konfirmasi Kehadiran</h2>
+            <p class="section-subtitle">
+                Merupakan suatu kehormatan dan
+                kebahagiaan
+                bagi kami apabila
+                Bapak/Ibu/Saudara/i
+                berkenan hadir untuk memberikan
+                doa restu.
+            </p>
+            <div class="rsvp-container">
+                <div id="rsvp-initial-choice"
+                    class="rsvp-initial-choice">
+                    <p class="rsvp-question">
+                        Apakah Anda
+                        akan hadir?</p>
+                    <div class="buttons">
+                        <button class="choice-btn"
+                            id="btn-attend-yes">
+                            <i
+                                class="fas fa-check-circle"></i>
+                            Ya, saya akan hadir
+                        </button>
+                        <button class="choice-btn"
+                            id="btn-attend-no">
+                            <i
+                                class="fas fa-times-circle"></i>
+                            Maaf, tidak bisa
+                        </button>
+                    </div>
+                </div>
+
+                <form id="rsvp-form-yes"
+                    class="rsvp-form"
+                    style="display: none;">
+                    <p class="form-title">Silakan
+                        isi data
+                        diri Anda</p>
+                    <div class="form-group">
+                        <label for="name-yes">Nama
+                            Lengkap</label>
+                        <input type="text"
+                            id="name-yes"
+                            name="name-yes"
+                            placeholder="Tuliskan nama Anda..."
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="wa-number">Nomor
+                            WhatsApp</label>
+                        <input type="tel"
+                            id="wa-number"
+                            name="wa-number"
+                            placeholder="Contoh: 08123456789"
+                            required>
+                    </div>
+                    <button type="submit"
+                        class="cta-button">Kirim
+                        Konfirmasi</button>
+                </form>
+
+                <div id="rsvp-form-no"
+                    class="rsvp-form"
+                    style="display: none;">
+                    <p class="form-title">Terima
+                        kasih
+                        atas informasinya.</p>
+                    <div class="form-group">
+                        <label for="name-no">Nama
+                            Lengkap</label>
+                        <input type="text"
+                            id="name-no"
+                            name="name-no"
+                            placeholder="Tuliskan nama Anda..."
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label
+                            for="wishes-no">Ucapan
+                            &
+                            Doa</label>
+                        <textarea id="wishes-no"
+                            name="wishes-no"
+                            rows="4"
+                            placeholder="Tuliskan ucapan dan doa Anda untuk kami..."></textarea>
+                    </div>
+                    <p class="gift-intro">Doa
+                        restu Anda
+                        adalah hadiah terindah.
+                        Namun jika
+                        ingin mengirimkan tanda
+                        kasih,
+                        dapat melalui:</p>
+                    <div class="gift-accounts">
+                        <div class="gift-account">
+                            <div
+                                class="account-logo dana">
+                                DANA</div>
+                            <div
+                                class="account-details">
+                                <span
+                                    class="account-number"
+                                    id="dana-number">085804148755</span>
+                                <span
+                                    class="account-name">
+                                    Khusnul
+                                    Khotimah</span>
+                            </div>
+                            <button
+                                class="copy-btn"
+                                data-copy-text="085804148755"><i
+                                    class="fas fa-copy"></i>
+                                Salin</button>
+                        </div>
+                        <div class="gift-account">
+                            <div
+                                class="account-logo bri">
+                                BRI</div>
+                            <div
+                                class="account-details">
+                                <span
+                                    class="account-number"
+                                    id="bri-number">058301040567501</span>
+                                <span
+                                    class="account-name">
+                                    Jefri Dwi
+                                    Setiawan</span>
+                            </div>
+                            <button
+                                class="copy-btn"
+                                data-copy-text="058301040567501"><i
+                                    class="fas fa-copy"></i>
+                                Salin</button>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        id="submit-ucapan"
+                        class="cta-button">Kirim
+                        Ucapan</button>
+                </div>
+
+                <div id="rsvp-success-message"
+                    class="rsvp-success-message"
+                    style="display: none;">
+                    <i class="fas fa-heart"></i>
+                    <p>Terima kasih banyak atas
+                        konfirmasi
+                        dan doa restu Anda!</p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="wedding-footer">
+            <div class="footer-content">
+                <p class="thank-you-message">
+                    Atas kehadiran dan doa restu
+                    yang
+                    telah diberikan oleh
+                    Bapak/Ibu/Saudara/i, kami
+                    mengucapkan
+                    terima kasih yang tulus.
+                    Semoga
+                    langkah kami ke depan
+                    senantiasa
+                    diiringi oleh kebahagiaan dan
+                    keberkahan dari Tuhan Yang
+                    Maha Esa.
+                </p>
+                <p
+                    class="couple-signature script-font">
+                    Jefri & Khusnul
+                </p>
+            </div>
+
+            <hr class="footer-separator">
+
+            <div class="creator-credit">
+                <p class="creator-title">Dibuat
+                    dengan ❤️
+                    oleh:</p>
+                <p class="creator-name">Bagas
+                    Berlian Tri
+                    Cahyono</p>
+                <div class="creator-socials">
+                    <a href="https://www.instagram.com/bbagaass_/"
+                        target="_blank"
+                        aria-label="Instagram Bagas">
+                        <i
+                            class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6282132920175"
+                        target="_blank"
+                        aria-label="WhatsApp Bagas">
+                        <i
+                            class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="music-control">
+        <button id="music-toggle"><i
+                class="fas fa-music"></i> Putar
+            Musik</button>
+        <audio id="wedding-music" loop>
+            <source
+                src="audio/I Choose You The Wedding Song  Ryann Darling Original  On iTunes & Spotify.mp3"
+                type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
