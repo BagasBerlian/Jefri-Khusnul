@@ -415,8 +415,7 @@ body {
 .wedding-landing {
   opacity: 0;
   overflow-y: auto;
-  /* Hapus padding agar header bisa full-width */
-  /* padding: 20px; */
+  overflow-x: hidden;
   display: none;
   background-color: #f9f3e9; /* Tambahkan background color utama */
 }
@@ -424,7 +423,7 @@ body {
 .wedding-header {
   text-align: center;
   padding: 100px 20px;
-  background-image: url("../assets/header-1.jpg");
+  background-image: url("../assets/header-3.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -445,7 +444,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Gelapkan sesuai selera */
+  background-color: rgba(0, 0, 0, 0.5); /* Gelapkan sesuai selera */
   z-index: 1;
 }
 
@@ -515,6 +514,62 @@ body {
   text-transform: uppercase;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.scroll-indicator {
+  position: relative; /* Tetap gunakan relative untuk z-index jika diperlukan */
+  margin-top: 40px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0; /* Awalnya transparan, diatur oleh GSAP */
+}
+
+.scroll-indicator .mouse {
+  width: 28px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.scroll-indicator .wheel {
+  width: 4px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel 2s ease-in-out infinite;
+}
+
+.scroll-indicator span {
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Animasi untuk roda mouse */
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    top: 8px;
+  }
+  50% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: 30px;
+  }
 }
 
 .verse-section {
@@ -638,7 +693,13 @@ body {
 .profile-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Agar foto pas tanpa distorsi */
+  object-fit: cover;
+  object-position: bottom;
+  scale: 1;
+}
+
+.profile-image-container .profile-image-man {
+  scale: 2 !important;
 }
 
 .profile-name {
@@ -946,6 +1007,7 @@ body {
 }
 
 .cta-button {
+  position: relative;
   display: inline-block;
   padding: 10px 25px;
   background-color: #8e6c88;
@@ -956,12 +1018,52 @@ body {
   font-size: 0.9rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3 ease;
 }
 
 .cta-button:hover {
   background-color: #a5849e;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Ikon spinner (lingkaran berputar) */
+.button-loader {
+  display: none; /* Sembunyikan secara default */
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-top-color: #fff; /* Membuat efek putaran */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Ketika tombol dalam keadaan loading */
+.cta-button.is-loading {
+  background-color: #a5849e; /* Sedikit ubah warna saat loading */
+}
+
+.cta-button.is-loading .button-text {
+  visibility: hidden; /* Sembunyikan teks asli */
+  opacity: 0;
+}
+
+.cta-button.is-loading .button-loader {
+  display: block; /* Tampilkan spinner */
+  position: absolute; /* Posisikan spinner di tengah tombol */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Animasi putaran untuk spinner */
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* =================================== */
@@ -1126,6 +1228,7 @@ body {
   flex-direction: column;
   text-align: left;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .account-number {
@@ -1152,6 +1255,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -1364,6 +1468,12 @@ body {
 
   .invitation-text {
     font-size: 1.1rem;
+  }
+
+  .wedding-header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    scale: 1;
   }
 
   .wedding-title {

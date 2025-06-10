@@ -7,6 +7,8 @@
         content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan Kami</title>
     <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
@@ -125,6 +127,12 @@
                 <p class="wedding-date">Rabu, 25
                     Juni
                     2025</p>
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll ke Bawah</span>
+                </div>
             </div>
         </header>
 
@@ -176,7 +184,8 @@
                 <div class="profile-card groom">
                     <div
                         class="profile-image-container">
-                        <img src="assets/cowok-1.JPG"
+                        <img class="profile-image-man"
+                            src="assets/cowok-3.jpg"
                             alt="Mempelai Pria Jefri">
                     </div>
                     <h3
@@ -203,7 +212,7 @@
                 <div class="profile-card bride">
                     <div
                         class="profile-image-container">
-                        <img src="assets/cewek-1.jpg"
+                        <img src="assets/cewek-2.jpg"
                             alt="Mempelai Wanita Khusnul">
                     </div>
                     <h3
@@ -232,11 +241,11 @@
                 Bahagia Kami</h2>
             <div class="gallery-grid">
                 <div class="gallery-item item-1">
-                    <img src="assets/header-1.jpg"
+                    <img src="assets/Gallery/1-edit.jpg"
                         alt="Galeri Foto 1">
                 </div>
                 <div class="gallery-item item-2">
-                    <img src="assets/cewek-1.jpg"
+                    <img src="assets/Gallery/2-edit.jpg"
                         alt="Galeri Foto 2">
                 </div>
                 <div
@@ -254,35 +263,35 @@
                         Jackson Brown, Jr.</span>
                 </div>
                 <div class="gallery-item item-3">
-                    <img src="assets/cowok-1.JPG"
+                    <img src="assets/Gallery/3-edit.jpg"
                         alt="Galeri Foto 3">
                 </div>
                 <div class="gallery-item item-4">
-                    <img src="assets/header-1.jpg"
+                    <img src="assets/Gallery/4-edit.jpg"
                         alt="Galeri Foto 4">
                 </div>
                 <div class="gallery-item item-5">
-                    <img src="assets/cewek-1.jpg"
+                    <img src="assets/Gallery/5-edit.jpg"
                         alt="Galeri Foto 5">
                 </div>
                 <div class="gallery-item item-6">
-                    <img src="assets/cowok-1.JPG"
+                    <img src="assets/Gallery/6-edit.jpg"
                         alt="Galeri Foto 6">
                 </div>
                 <div class="gallery-item item-7">
-                    <img src="assets/header-1.jpg"
+                    <img src="assets/Gallery/1-edit.jpg"
                         alt="Galeri Foto 7">
                 </div>
                 <div class="gallery-item item-8">
-                    <img src="assets/cewek-1.jpg"
+                    <img src="assets/Gallery/2-edit.jpg"
                         alt="Galeri Foto 8">
                 </div>
                 <div class="gallery-item item-9">
-                    <img src="assets/cowok-1.JPG"
+                    <img src="assets/Gallery/3-edit.jpg"
                         alt="Galeri Foto 9">
                 </div>
                 <div class="gallery-item item-10">
-                    <img src="assets/header-1.jpg"
+                    <img src="assets/Gallery/4-edit.jpg"
                         alt="Galeri Foto 10">
                 </div>
             </div>
@@ -337,7 +346,7 @@
                     </p>
                 </div>
 
-                <hr class="event-separator">
+                <!-- <hr class="event-separator">
 
                 <div class="event-card">
                     <div class="event-icon"><i
@@ -359,16 +368,13 @@
                         Kec.
                         Kembangbahu, Lamongan
                     </p>
-                </div>
+                </div> -->
 
                 <div class="event-actions">
                     <a href="https://maps.app.goo.gl/PoXattkLSJjhWrvPA"
                         target="_blank"
                         class="cta-button">Lihat
                         Peta Lokasi</a>
-                    <a href="#"
-                        class="cta-button">Simpan
-                        ke Kalender</a>
                 </div>
 
                 <img src="assets/Floral.png"
@@ -425,27 +431,22 @@
                             placeholder="Tuliskan nama Anda..."
                             required>
                     </div>
-                    <div class="form-group">
-                        <label
-                            for="wa-number">Nomor
-                            WhatsApp</label>
-                        <input type="tel"
-                            id="wa-number"
-                            name="wa-number"
-                            placeholder="Contoh: 08123456789"
-                            required>
-                    </div>
                     <button type="submit"
-                        class="cta-button">Kirim
-                        Konfirmasi</button>
+                        class="cta-button">
+                        <span
+                            class="button-text">Kirim
+                            Konfirmasi</span>
+                        <span
+                            class="button-loader"></span>
+                    </button>
                 </form>
 
-                <div id="rsvp-form-no"
+                <form id="rsvp-form-no"
                     class="rsvp-form"
                     style="display: none;">
                     <p class="form-title">Terima
-                        kasih
-                        atas informasinya.</p>
+                        kasih atas
+                        informasinya.</p>
                     <div class="form-group">
                         <label for="name-no">Nama
                             Lengkap</label>
@@ -466,28 +467,29 @@
                             placeholder="Tuliskan ucapan dan doa Anda untuk kami..."></textarea>
                     </div>
                     <p class="gift-intro">Doa
-                        restu Anda
-                        adalah hadiah terindah.
-                        Namun jika
-                        ingin mengirimkan tanda
-                        kasih,
-                        dapat melalui:</p>
+                        restu Anda adalah
+                        hadiah terindah. Namun
+                        jika ingin
+                        mengirimkan tanda kasih,
+                        dapat melalui:
+                    </p>
+
                     <div class="gift-accounts">
                         <div class="gift-account">
                             <div
                                 class="account-logo dana">
-                                DANA</div>
+                                DANA
+                            </div>
                             <div
                                 class="account-details">
                                 <span
                                     class="account-number"
                                     id="dana-number">085804148755</span>
                                 <span
-                                    class="account-name">
-                                    Khusnul
+                                    class="account-name">Khusnul
                                     Khotimah</span>
                             </div>
-                            <button
+                            <button type="button"
                                 class="copy-btn"
                                 data-copy-text="085804148755"><i
                                     class="fas fa-copy"></i>
@@ -496,29 +498,56 @@
                         <div class="gift-account">
                             <div
                                 class="account-logo bri">
-                                BRI</div>
+                                BRI
+                            </div>
+                            <div
+                                class="account-details">
+                                <span
+                                    class="account-number"
+                                    id="bri-number">631001016949530</span>
+                                <span
+                                    class="account-name">Khusnul
+                                    Khotimah</span>
+                            </div>
+                            <button type="button"
+                                class="copy-btn"
+                                data-copy-text="631001016949530"><i
+                                    class="fas fa-copy"></i>
+                                Salin</button>
+                        </div>
+                        <div class="gift-account">
+                            <div
+                                class="account-logo bri">
+                                BRI
+                            </div>
                             <div
                                 class="account-details">
                                 <span
                                     class="account-number"
                                     id="bri-number">058301040567501</span>
                                 <span
-                                    class="account-name">
-                                    Jefri Dwi
+                                    class="account-name">Jefri
+                                    Dwi
                                     Setiawan</span>
                             </div>
-                            <button
+                            <button type="button"
                                 class="copy-btn"
                                 data-copy-text="058301040567501"><i
                                     class="fas fa-copy"></i>
                                 Salin</button>
                         </div>
                     </div>
+
                     <button type="submit"
                         id="submit-ucapan"
-                        class="cta-button">Kirim
-                        Ucapan</button>
-                </div>
+                        class="cta-button">
+                        <span
+                            class="button-text">Kirim
+                            Ucapan</span>
+                        <span
+                            class="button-loader"></span>
+                    </button>
+                </form>
 
                 <div id="rsvp-success-message"
                     class="rsvp-success-message"

@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         onComplete: () => {
           loadingScreen.style.display = "none";
           initApp();
-          //   showLandingPage();
+          // showLandingPage();
         },
       });
     }, 3000);
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function openInvitation() {
     if (weddingMusic.paused) {
       weddingMusic.play();
-      musicToggle.innerHTML = '<i class="fas fa-music"></i> Pause Musik';
+      musicToggle.innerHTML = '<i class="fas fa-music"></i> Hentikan Musik';
       gsap.to(musicToggle, {
         scale: 1.1,
         duration: 0.3,
@@ -338,18 +338,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnNo = document.getElementById("btn-attend-no");
     const initialChoice = document.getElementById("rsvp-initial-choice");
     const formYes = document.getElementById("rsvp-form-yes");
-    const formNo = document.getElementById("rsvp-form-no");
+    const formNo = document.getElementById("rsvp-form-no"); // Definisikan form 'tidak hadir'
     const successMessage = document.getElementById("rsvp-success-message");
-    const rsvpContainer = document.querySelector(".rsvp-container");
 
-    // Fungsi untuk menampilkan form dengan animasi
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbxEDjOaP4T43O9yMfcRBIlNAdxEktzMXU7vNGMHcbhwoZIuHAJk8JSTrTSgnWbEKG0/exec";
+
     const showForm = (elementToShow) => {
       gsap.to(initialChoice, {
         duration: 0.5,
         autoAlpha: 0,
         onComplete: () => (initialChoice.style.display = "none"),
       });
-
       elementToShow.style.display = "block";
       gsap.fromTo(
         elementToShow,
@@ -358,27 +358,21 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     };
 
-    // Ketika tombol "Ya, hadir" diklik
     btnYes.addEventListener("click", () => {
       btnYes.classList.add("active");
       btnNo.classList.remove("active");
       showForm(formYes);
     });
 
-    // Ketika tombol "Maaf, tidak bisa" diklik
     btnNo.addEventListener("click", () => {
       btnNo.classList.add("active");
       btnYes.classList.remove("active");
       showForm(formNo);
     });
 
-    // Fungsi untuk menampilkan pesan sukses
     const showSuccess = () => {
-      // Sembunyikan semua form
       formYes.style.display = "none";
       formNo.style.display = "none";
-
-      // Tampilkan pesan sukses dengan animasi
       successMessage.style.display = "block";
       gsap.fromTo(
         successMessage,
@@ -387,35 +381,82 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     };
 
-    // Ketika form "Hadir" disubmit
+    // Event listener untuk form "YA, HADIR"
     formYes.addEventListener("submit", (e) => {
-      e.preventDefault(); // Mencegah form reload halaman
-      // Di sini Anda bisa menambahkan kode untuk mengirim data ke Google Sheets/backend
-      showSuccess();
-    });
-
-    // Ketika tombol "Kirim Ucapan" diklik
-    document.getElementById("submit-ucapan").addEventListener("click", (e) => {
       e.preventDefault();
-      showSuccess();
+      const submitButton = formYes.querySelector("button[type='submit']");
+      submitButton.disabled = true;
+      submitButton.classList.add("is-loading");
+
+      // Tambahkan tipe form ke data
+      const formData = new FormData(formYes);
+      formData.append("formType", "kehadiran");
+
+      fetch(SCRIPT_URL, { method: "POST", body: formData })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.result === "success") {
+            showSuccess();
+          } else {
+            throw new Error(data.error);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Terjadi kesalahan.");
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.classList.remove("is-loading");
+        });
     });
 
-    // Fungsionalitas untuk tombol Salin/Copy
+    // =========================================================
+    // === EVENT LISTENER BARU UNTUK FORM "TIDAK BISA HADIR" ===
+    // =========================================================
+    formNo.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const submitButton = formNo.querySelector("button[type='submit']");
+      submitButton.disabled = true;
+      submitButton.classList.add("is-loading");
+
+      // Tambahkan tipe form ke data
+      const formData = new FormData(formNo);
+      formData.append("formType", "ucapan");
+
+      fetch(SCRIPT_URL, { method: "POST", body: formData })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.result === "success") {
+            showSuccess();
+          } else {
+            throw new Error(data.error);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Terjadi kesalahan.");
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.classList.remove("is-loading");
+        });
+    });
+
+    // Fungsi copy tidak berubah
     document.querySelectorAll(".copy-btn").forEach((button) => {
       button.addEventListener("click", () => {
         const textToCopy = button.getAttribute("data-copy-text");
         navigator.clipboard
           .writeText(textToCopy)
           .then(() => {
-            const originalText = button.innerHTML;
+            const originalContent = button.innerHTML;
             button.innerHTML = "Tersalin!";
             setTimeout(() => {
-              button.innerHTML = originalText;
+              button.innerHTML = originalContent;
             }, 2000);
           })
-          .catch((err) => {
-            console.error("Gagal menyalin: ", err);
-          });
+          .catch((err) => console.error("Gagal menyalin: ", err));
       });
     });
   }
@@ -454,6 +495,13 @@ document.addEventListener("DOMContentLoaded", function () {
       opacity: 0,
       ease: "back.out",
       delay: 1.5,
+    });
+    gsap.to(".scroll-indicator", {
+      duration: 1.5,
+      opacity: 1, // Menjadi terlihat
+      y: 0, // Posisi akhir
+      ease: "power2.out",
+      delay: 2.0, // Muncul setelah elemen lain
     });
 
     setTimeout(() => {
