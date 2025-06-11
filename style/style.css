@@ -1472,7 +1472,7 @@ body {
 
   .wedding-header {
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: -15.5rem;
     scale: 1;
   }
 
