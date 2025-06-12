@@ -14,7 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet"
+        href="style/style.css?v=2">
 </head>
 
 <body>
@@ -25,7 +26,6 @@
         <p>Memuat Undangan...</p>
     </div>
 
-    <!-- Envelope Section -->
     <div class="envelope-section">
         <div class=" envelope-wrapper">
             <div
@@ -48,7 +48,6 @@
         </div>
     </div>
 
-    <!-- Invitation Card Section -->
     <div class="invitation-card-section"
         style="display: none;">
         <div class="invitation-card">
@@ -68,7 +67,7 @@
 
                 <div class="card-content">
                     <h1 class="couple-name">Jefri
-                        &amp; Khusnul</h1>
+                        & Khusnul</h1>
                     <p class="invitation-text">
                         Dengan penuh kebahagiaan,
                         kami mengundang Anda untuk
@@ -85,63 +84,83 @@
         </div>
     </div>
 
-    <!-- Wedding Landing Page -->
     <div class="wedding-landing"
         style="display: none;">
         <header class="wedding-header">
             <div class="overlay"></div>
             <div class="header-content">
-                <h3 class="intro-text ">
+                <h3 class="intro-text"
+                    data-aos="fade-down"
+                    data-aos-delay="500">
                     Pernikahan Dari</h3>
-                <h1 class="wedding-title">
+                <h1 class="wedding-title"
+                    data-aos="zoom-in"
+                    data-aos-delay="700"
+                    data-aos-duration="1000">
                     Jefri
-                    &amp;
+                    &
                     Khusnul
                 </h1>
-                <p class="wedding-date">Akan
+                <p class="wedding-date"
+                    data-aos="fade-up"
+                    data-aos-delay="900">Akan
                     melangsungkan akad pernikahan
                     dalam:</p>
                 <div id="countdown-timer"
                     class="countdown-timer">
-                    <div class="timer-box">
+                    <div class="timer-box"
+                        data-aos="fade-up"
+                        data-aos-delay="1100">
                         <span
                             id="countdown-days">00</span>
                         <p>Hari</p>
                     </div>
-                    <div class="timer-box">
+                    <div class="timer-box"
+                        data-aos="fade-up"
+                        data-aos-delay="1200">
                         <span
                             id="countdown-hours">00</span>
                         <p>Jam</p>
                     </div>
-                    <div class="timer-box">
+                    <div class="timer-box"
+                        data-aos="fade-up"
+                        data-aos-delay="1300">
                         <span
                             id="countdown-minutes">00</span>
                         <p>Menit</p>
                     </div>
-                    <div class="timer-box">
+                    <div class="timer-box"
+                        data-aos="fade-up"
+                        data-aos-delay="1400">
                         <span
                             id="countdown-seconds">00</span>
                         <p>Detik</p>
                     </div>
                 </div>
-                <p class="wedding-date">Rabu, 25
+                <p class="wedding-date"
+                    data-aos="fade-up"
+                    data-aos-delay="1500">Rabu, 25
                     Juni
                     2025</p>
-                <div class="scroll-indicator">
+                <div class="scroll-indicator"
+                    data-aos="fade"
+                    data-aos-delay="1700">
                     <div class="mouse">
                         <div class="wheel"></div>
                     </div>
-                    <span>Scroll ke Bawah</span>
+                    <span>Geser ke Bawah</span>
                 </div>
             </div>
         </header>
 
         <section class="verse-section">
-            <div class="verse-icon">
+            <div class="verse-icon"
+                data-aos="zoom-in-down">
                 <i class="fas fa-book-open"></i>
             </div>
-
-            <p class="verse-arabic">
+            <p class="verse-arabic"
+                data-aos="fade-up"
+                data-aos-delay="200">
                 وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ
                 مِنْ
                 أَنْفُسِكُمْ أَزْوَاجًا
@@ -150,8 +169,9 @@
                 مَوَدَّةً
                 وَرَحْمَةً
             </p>
-
-            <blockquote class="verse-text">
+            <blockquote class="verse-text"
+                data-aos="fade-up"
+                data-aos-delay="400">
                 "Dan di antara tanda-tanda
                 kekuasaan-Nya
                 ialah Dia menciptakan untukmu
@@ -162,41 +182,57 @@
                 menjadikan kasih sayang di antara
                 kamu."
             </blockquote>
-            <p class="verse-source">(QS. Ar-Rum:
+            <p class="verse-source"
+                data-aos="fade-up"
+                data-aos-delay="600">(QS. Ar-Rum:
                 21)</p>
         </section>
 
         <section class="couple-profile-section">
-            <h2 class="section-title script-font">
+            <h2 class="section-title script-font"
+                data-aos="fade-down">
                 Assalamualaikum Warahmatullahi
                 Wabarakatuh
             </h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle"
+                data-aos="fade-down"
+                data-aos-delay="200">
                 Dengan memohon rahmat dan ridho
                 Allah SWT,
                 kami bermaksud menyelenggarakan
                 pernikahan
                 putra-putri kami:
             </p>
-
             <div class="profiles-container">
-
-                <div class="profile-card groom">
-                    <div
-                        class="profile-image-container">
+                <div id="groom-card"
+                    class="profile-card groom"
+                    data-aos="fade-right">
+                    <div class="profile-image-container"
+                        data-aos="zoom-in"
+                        data-aos-anchor="#groom-card"
+                        data-aos-delay="400">
                         <img class="profile-image-man"
                             src="assets/cowok-3.jpg"
-                            alt="Mempelai Pria Jefri">
+                            alt="Mempelai Pria Jefri"
+                            loading="lazy">
                     </div>
-                    <h3
-                        class="profile-name script-font">
+                    <h3 class="profile-name script-font"
+                        data-aos="fade-up"
+                        data-aos-anchor="#groom-card"
+                        data-aos-delay="600">
                         Jefri Dwi Setiawan</h3>
-                    <p class="profile-parents">
+                    <p class="profile-parents"
+                        data-aos="fade-up"
+                        data-aos-anchor="#groom-card"
+                        data-aos-delay="700">
                         Putra dari Bapak Suparto
                         (Alm)
                         <br>& Ibu Lami'ah
                     </p>
-                    <p class="profile-address">
+                    <p class="profile-address"
+                        data-aos="fade-up"
+                        data-aos-anchor="#groom-card"
+                        data-aos-delay="800">
                         <i
                             class="fas fa-map-marker-alt"></i>
                         Dsn. Pelang, Ds. Pelang,
@@ -204,26 +240,38 @@
                         Kembangbahu, Lamongan
                     </p>
                 </div>
-
-                <div
-                    class="profile-separator script-font">
+                <div class="profile-separator script-font"
+                    data-aos="zoom-in"
+                    data-aos-delay="500">
                     &</div>
-
-                <div class="profile-card bride">
-                    <div
-                        class="profile-image-container">
+                <div id="bride-card"
+                    class="profile-card bride"
+                    data-aos="fade-left">
+                    <div class="profile-image-container"
+                        data-aos="zoom-in"
+                        data-aos-anchor="#bride-card"
+                        data-aos-delay="400">
                         <img src="assets/cewek-2.jpg"
-                            alt="Mempelai Wanita Khusnul">
+                            alt="Mempelai Wanita Khusnul"
+                            loading="lazy">
                     </div>
-                    <h3
-                        class="profile-name script-font">
+                    <h3 class="profile-name script-font"
+                        data-aos="fade-up"
+                        data-aos-anchor="#bride-card"
+                        data-aos-delay="600">
                         Khusnul Khotimah</h3>
-                    <p class="profile-parents">
+                    <p class="profile-parents"
+                        data-aos="fade-up"
+                        data-aos-anchor="#bride-card"
+                        data-aos-delay="700">
                         Putri dari Bapak Suwar
                         <br>& Ibu
                         Sartini
                     </p>
-                    <p class="profile-address">
+                    <p class="profile-address"
+                        data-aos="fade-up"
+                        data-aos-anchor="#bride-card"
+                        data-aos-delay="800">
                         <i
                             class="fas fa-map-marker-alt"></i>
                         Dsn. Kedungbulu, Ds.
@@ -231,25 +279,33 @@
                         Kec. Kembangbahu, Lamongan
                     </p>
                 </div>
-
             </div>
         </section>
 
         <section class="gallery-section">
-            <h2 class="section-title script-font">
+            <h2 class="section-title script-font"
+                data-aos="fade-up">
                 Momen
                 Bahagia Kami</h2>
             <div class="gallery-grid">
-                <div class="gallery-item item-1">
+                <div class="gallery-item item-1"
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1200">
                     <img src="assets/Gallery/1-edit.jpg"
-                        alt="Galeri Foto 1">
+                        alt="Galeri Foto 1"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-2">
+                <div class="gallery-item item-2"
+                    data-aos="fade-left"
+                    data-aos-easing="ease-in-out-sine"
+                    data-aos-duration="1000">
                     <img src="assets/Gallery/2-edit.jpg"
-                        alt="Galeri Foto 2">
+                        alt="Galeri Foto 2"
+                        loading="lazy">
                 </div>
-                <div
-                    class="gallery-item gallery-text-item">
+                <div class="gallery-item gallery-text-item"
+                    data-aos="fade"
+                    data-aos-delay="500">
                     <p class="gallery-quote">
                         "Cinta adalah
                         ketika kebahagiaan orang
@@ -262,52 +318,84 @@
                         H.
                         Jackson Brown, Jr.</span>
                 </div>
-                <div class="gallery-item item-3">
+                <div class="gallery-item item-3"
+                    data-aos="fade-right"
+                    data-aos-easing="ease-in-out-sine"
+                    data-aos-duration="1000">
                     <img src="assets/Gallery/3-edit.jpg"
-                        alt="Galeri Foto 3">
+                        alt="Galeri Foto 3"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-4">
+                <div class="gallery-item item-4"
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1500">
                     <img src="assets/Gallery/4-edit.jpg"
-                        alt="Galeri Foto 4">
+                        alt="Galeri Foto 4"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-5">
+                <div class="gallery-item item-5"
+                    data-aos="flip-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="200">
                     <img src="assets/Gallery/5-edit.jpg"
-                        alt="Galeri Foto 5">
+                        alt="Galeri Foto 5"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-6">
+                <div class="gallery-item item-6"
+                    data-aos="zoom-out"
+                    data-aos-duration="1000">
                     <img src="assets/Gallery/6-edit.jpg"
-                        alt="Galeri Foto 6">
+                        alt="Galeri Foto 6"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-7">
+                <div class="gallery-item item-7"
+                    data-aos="fade-up-right"
+                    data-aos-duration="1200">
                     <img src="assets/Gallery/1-edit.jpg"
-                        alt="Galeri Foto 7">
+                        alt="Galeri Foto 7"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-8">
+                <div class="gallery-item item-8"
+                    data-aos="fade-up-left"
+                    data-aos-delay="200"
+                    data-aos-duration="1200">
                     <img src="assets/Gallery/2-edit.jpg"
-                        alt="Galeri Foto 8">
+                        alt="Galeri Foto 8"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-9">
+                <div class="gallery-item item-9"
+                    data-aos="zoom-out-right"
+                    data-aos-duration="1500">
                     <img src="assets/Gallery/3-edit.jpg"
-                        alt="Galeri Foto 9">
+                        alt="Galeri Foto 9"
+                        loading="lazy">
                 </div>
-                <div class="gallery-item item-10">
+                <div class="gallery-item item-10"
+                    data-aos="zoom-out-left"
+                    data-aos-delay="200"
+                    data-aos-duration="1500">
                     <img src="assets/Gallery/4-edit.jpg"
-                        alt="Galeri Foto 10">
+                        alt="Galeri Foto 10"
+                        loading="lazy">
                 </div>
             </div>
         </section>
 
         <section class="event-info-section">
-
-            <h2 class="section-title script-font">
+            <h2 class="section-title script-font"
+                data-aos="fade-down">
                 Informasi Acara</h2>
-
-            <div class="event-frame">
+            <div class="event-frame"
+                data-aos="zoom-in-up">
                 <img src="assets/Floral.png"
                     alt="Hiasan Bunga Kanan Atas"
-                    class="floral-decoration floral-top-right">
-
-                <div class="event-card">
+                    class="floral-decoration floral-top-right"
+                    data-aos="fade-left"
+                    data-aos-delay="500">
+                <div class="event-card"
+                    data-aos="fade-up"
+                    data-aos-delay="200">
                     <div class="event-icon"><i
                             class="fas fa-ring"></i>
                     </div>
@@ -321,10 +409,10 @@
                         08:00 -
                         09:00 WIB</p>
                 </div>
-
                 <hr class="event-separator">
-
-                <div class="event-card">
+                <div class="event-card"
+                    data-aos="fade-up"
+                    data-aos-delay="300">
                     <div class="event-icon"><i
                             class="fas fa-glass-cheers"></i>
                     </div>
@@ -345,48 +433,29 @@
                         Kec. Kembangbahu, Lamongan
                     </p>
                 </div>
-
-                <!-- <hr class="event-separator">
-
-                <div class="event-card">
-                    <div class="event-icon"><i
-                            class="fas fa-house-user"></i>
-                    </div>
-                    <h3
-                        class="event-title script-font">
-                        Ngunduh Mantu</h3>
-                    <p class="event-date">Kamis
-                        Wage, 26
-                        Juni 2025</p>
-                    <p class="event-time">Pukul
-                        13:00 WIB
-                        - Selesai</p>
-                    <p class="event-location">
-                        <i
-                            class="fas fa-map-marker-alt"></i>
-                        Dsn. Pelang, Ds. Pelang,
-                        Kec.
-                        Kembangbahu, Lamongan
-                    </p>
-                </div> -->
-
-                <div class="event-actions">
+                <div class="event-actions"
+                    data-aos="zoom-in"
+                    data-aos-delay="400">
                     <a href="https://maps.app.goo.gl/ytQPzmreWdWKx6SJ9"
                         target="_blank"
                         class="cta-button">Lihat
                         Peta Lokasi</a>
                 </div>
-
                 <img src="assets/Floral.png"
                     alt="Hiasan Bunga Kiri Bawah"
-                    class="floral-decoration floral-bottom-left">
+                    class="floral-decoration floral-bottom-left"
+                    data-aos="fade-right"
+                    data-aos-delay="500">
             </div>
         </section>
 
         <section class="rsvp-section">
-            <h2 class="section-title script-font">
+            <h2 class="section-title script-font"
+                data-aos="fade-up">
                 Konfirmasi Kehadiran</h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle"
+                data-aos="fade-up"
+                data-aos-delay="100">
                 Merupakan suatu kehormatan dan
                 kebahagiaan
                 bagi kami apabila
@@ -394,12 +463,23 @@
                 berkenan hadir untuk memberikan
                 doa restu.
             </p>
-            <div class="rsvp-container">
+            <div class="rsvp-container"
+                data-aos="zoom-in-up"
+                data-aos-delay="200">
                 <div id="rsvp-initial-choice"
                     class="rsvp-initial-choice">
                     <p class="rsvp-question">
                         Apakah Anda
                         akan hadir?</p>
+                    <p class="gift-info">Bagi
+                        Bapak/Ibu/Saudara/i yang
+                        tidak dapat hadir, kami
+                        menyediakan kemudahan
+                        untuk mengirimkan hadiah
+                        secara online melalui
+                        tautan yang tersedia di
+                        bawah pilihan "Maaf, tidak
+                        bisa".</p>
                     <div class="buttons">
                         <button class="choice-btn"
                             id="btn-attend-yes">
@@ -415,7 +495,6 @@
                         </button>
                     </div>
                 </div>
-
                 <form id="rsvp-form-yes"
                     class="rsvp-form"
                     style="display: none;">
@@ -440,7 +519,6 @@
                             class="button-loader"></span>
                     </button>
                 </form>
-
                 <form id="rsvp-form-no"
                     class="rsvp-form"
                     style="display: none;">
@@ -473,7 +551,6 @@
                         mengirimkan tanda kasih,
                         dapat melalui:
                     </p>
-
                     <div class="gift-accounts">
                         <div class="gift-account">
                             <div
@@ -516,7 +593,31 @@
                                 Salin</button>
                         </div>
                     </div>
-
+                    <div class="gift-steps">
+                        <p class="steps-title">
+                            Cara Mengirim Hadiah:
+                        </p>
+                        <ol class="steps-list">
+                            <li>Pilih salah satu
+                                akun (DANA atau
+                                BRI) dan klik
+                                tombol "Salin".
+                            </li>
+                            <li>Buka aplikasi
+                                perbankan atau
+                                dompet digital
+                                Anda.</li>
+                            <li>Lakukan transfer
+                                ke nomor yang
+                                sudah Anda salin.
+                            </li>
+                            <li>Setelah selesai,
+                                Anda dapat
+                                melanjutkan untuk
+                                mengirim ucapan di
+                                bawah ini.</li>
+                        </ol>
+                    </div>
                     <button type="submit"
                         id="submit-ucapan"
                         class="cta-button">
@@ -527,7 +628,6 @@
                             class="button-loader"></span>
                     </button>
                 </form>
-
                 <div id="rsvp-success-message"
                     class="rsvp-success-message"
                     style="display: none;">
@@ -536,12 +636,12 @@
                         konfirmasi
                         dan doa restu Anda!</p>
                 </div>
-
             </div>
         </section>
 
         <footer class="wedding-footer">
-            <div class="footer-content">
+            <div class="footer-content"
+                data-aos="fade-up">
                 <p class="thank-you-message">
                     Atas kehadiran dan doa restu
                     yang
@@ -561,10 +661,11 @@
                     Jefri & Khusnul
                 </p>
             </div>
-
-            <hr class="footer-separator">
-
-            <div class="creator-credit">
+            <hr class="footer-separator"
+                data-aos="zoom-in">
+            <div class="creator-credit"
+                data-aos="fade-up"
+                data-aos-delay="200">
                 <p class="creator-title">Dibuat
                     dengan ❤️
                     oleh:</p>
@@ -604,6 +705,8 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script
+        src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 

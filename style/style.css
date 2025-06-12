@@ -11,7 +11,7 @@ body {
   color: #333;
   overflow-x: hidden;
   min-height: 100vh;
-  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+  background-image: url("../assets/bg-paper.png");
 }
 
 /* Loading Screen */
@@ -99,8 +99,8 @@ body {
 
 /* Envelope Styles */
 .envelope-section,
-.invitation-card-section,
-.wedding-landing {
+.invitation-card-section {
+  /* wedding-landing dihapus dari sini */
   position: fixed;
   top: 0;
   left: 0;
@@ -307,7 +307,7 @@ body {
   position: absolute;
   width: 80px;
   height: 80px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d4a5c3" d="M50 0 Q70 40 100 50 Q70 60 50 100 Q30 60 0 50 Q30 40 50 0 Z"/></svg>');
+  background-image: url("../assets/hiasan.svg");
   background-size: contain;
   opacity: 0.2;
   transition: all 0.5s ease;
@@ -414,42 +414,39 @@ body {
 /* Wedding Landing Page Styles */
 .wedding-landing {
   opacity: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
   display: none;
-  background-color: #f9f3e9; /* Tambahkan background color utama */
+  background-color: #f9f3e9;
+  position: relative; /* Diubah dari fixed */
 }
 
 .wedding-header {
   text-align: center;
   padding: 100px 20px;
-  background-image: url("../assets/header-3.jpg");
+  background-image: url("../assets/header-4.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  margin-bottom: 0; /* Hapus margin bottom */
+  background-attachment: scroll;
+  margin-bottom: 0;
   position: relative;
   overflow: hidden;
-  color: #fff; /* Ubah warna teks default menjadi putih */
-  height: 100vh; /* Buat header memenuhi layar */
-  display: flex; /* Gunakan flex untuk centering */
+  color: #fff;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Overlay gelap untuk membuat teks lebih mudah dibaca */
 .wedding-header .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Gelapkan sesuai selera */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
 .wedding-header:before {
-  /* Hapus atau non-aktifkan border atas yang lama */
   content: none;
 }
 
@@ -457,7 +454,6 @@ body {
   position: relative;
   z-index: 2;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-  opacity: 0;
 }
 
 .intro-text {
@@ -469,9 +465,9 @@ body {
 
 .wedding-title {
   font-family: "Dancing Script", cursive;
-  font-size: 5rem; /* Perbesar ukuran font nama */
-  color: #fff; /* Pastikan warna putih */
-  margin-bottom: 30px; /* Beri jarak ke countdown */
+  font-size: 5rem;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
 .wedding-date {
@@ -497,7 +493,7 @@ body {
   border-radius: 10px;
   min-width: 90px;
   text-align: center;
-  backdrop-filter: blur(5px); /* Efek glassmorphism */
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
 
@@ -517,7 +513,7 @@ body {
 }
 
 .scroll-indicator {
-  position: relative; /* Tetap gunakan relative untuk z-index jika diperlukan */
+  position: relative;
   margin-top: 40px;
   z-index: 5;
   display: flex;
@@ -525,7 +521,7 @@ body {
   align-items: center;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  opacity: 0; /* Awalnya transparan, diatur oleh GSAP */
+  opacity: 0;
 }
 
 .scroll-indicator .mouse {
@@ -551,12 +547,12 @@ body {
 
 .scroll-indicator span {
   font-size: 0.8rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
+  margin-top: 15px;
   text-transform: uppercase;
 }
 
-/* Animasi untuk roda mouse */
 @keyframes scroll-wheel {
   0% {
     opacity: 1;
@@ -575,12 +571,11 @@ body {
 .verse-section {
   padding: 80px 20px;
   text-align: center;
-  background-color: #fdfaf3; /* Sedikit lebih terang dari base color untuk highlight */
+  background-color: #fdfaf3;
   position: relative;
   overflow: hidden;
 }
 
-/* Dekorasi garis tipis di atas */
 .verse-section::before {
   content: "";
   position: absolute;
@@ -593,46 +588,45 @@ body {
 }
 
 .verse-icon {
-  font-size: 2.5rem; /* Ukuran ikon */
-  color: #8e6c88; /* Warna aksen ungu yang sudah ada */
+  font-size: 2.5rem;
+  color: #8e6c88;
   margin-bottom: 25px;
 }
 
 .verse-arabic {
-  font-family: "Times New Roman", Times, serif; /* Font serif umum untuk tampilan klasik */
-  font-size: 1.8rem; /* Ukuran font lebih besar agar menonjol */
-  direction: rtl; /* PENTING: Membuat teks berjalan dari kanan ke kiri */
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.8rem;
+  direction: rtl;
   color: #555;
   margin-bottom: 15px;
-  line-height: 2.5rem; /* Jarak antar baris tulisan Arab */
+  line-height: 2.5rem;
 }
 
 .verse-text {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem; /* Ukuran font kutipan */
+  font-size: 1.1rem;
   font-style: italic;
-  line-height: 1.8; /* Jarak antar baris agar mudah dibaca */
-  color: #555; /* Warna teks yang lembut */
-  max-width: 800px; /* Batas lebar agar tidak terlalu panjang di layar besar */
-  margin: 0 auto 20px auto; /* Center alignment */
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
   font-weight: 400;
 }
 
 .verse-source {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600; /* Dibuat tebal agar menonjol */
-  color: #8e6c88; /* Menggunakan warna aksen */
+  font-weight: 600;
+  color: #8e6c88;
   font-size: 1rem;
 }
 
 .couple-profile-section {
   padding: 80px 20px;
   text-align: center;
-  background-color: #f9f3e9; /* Warna krem utama */
+  background-color: #f9f3e9;
   position: relative;
 }
 
-/* Menggunakan font "Dancing Script" untuk judul */
 .script-font {
   font-family: "Dancing Script", cursive;
 }
@@ -656,7 +650,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* Agar responsif di HP */
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -667,9 +661,9 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   padding: 30px;
-  flex: 1; /* Agar lebar kartu fleksibel */
-  min-width: 320px; /* Lebar minimum kartu */
-  max-width: 400px; /* Lebar maksimum kartu */
+  flex: 1;
+  min-width: 320px;
+  max-width: 400px;
   position: relative;
   border-top: 5px solid #d4a5c3;
 }
@@ -683,7 +677,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: -80px auto 20px auto; /* Membuat foto menjorok ke atas */
+  margin: -80px auto 20px auto;
   border: 8px solid #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -743,25 +737,20 @@ body {
   margin-bottom: 60px;
 }
 
-/* Container utama galeri */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(
-    8,
-    1fr
-  ); /* Basis 8 kolom untuk presisi tinggi */
+  grid-template-columns: repeat(8, 1fr);
   grid-auto-flow: dense;
-  gap: 25px; /* Jarak antar kolom dan baris lebih besar */
+  gap: 25px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Gaya dasar untuk setiap item foto */
 .gallery-item {
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(142, 108, 136, 0.2);
   border: 8px solid #fff;
-  grid-row: auto / span 4; /* Tinggi dasar setiap item */
+  grid-row: auto / span 4;
   background-color: #e3d9e0;
   will-change: transform, opacity;
 }
@@ -775,9 +764,6 @@ body {
   transition: filter 0.8s ease-in-out;
 }
 
-/* --- Posisi dan Ukuran Setiap Foto --- */
-
-/* FOTO UTAMA 1 - lebih besar */
 .gallery-grid .item-1 {
   grid-column: 1 / span 5;
   grid-row: auto / span 5;
@@ -785,7 +771,6 @@ body {
   z-index: 2;
 }
 
-/* Foto-foto pendamping yang lebih kecil */
 .gallery-grid .item-2 {
   grid-column: 6 / span 3;
   grid-row: auto / span 4;
@@ -811,7 +796,6 @@ body {
   transform: rotate(8deg);
 }
 
-/* Kotak teks di tengah, ukuran lebih kecil */
 .gallery-text-item {
   grid-column: 2 / span 4;
   grid-row: auto / span 2;
@@ -828,12 +812,11 @@ body {
 }
 .gallery-quote {
   font-size: 1.3rem;
-} /* Ukuran font disesuaikan */
+}
 .gallery-signature {
   font-size: 0.8rem;
 }
 
-/* Foto-foto pendamping lainnya */
 .gallery-grid .item-6 {
   grid-column: 6 / span 3;
   grid-row: auto / span 4;
@@ -842,7 +825,6 @@ body {
   z-index: 2;
 }
 
-/* FOTO UTAMA 2 - lebih besar */
 .gallery-grid .item-7 {
   grid-column: 1 / span 5;
   grid-row: auto / span 5;
@@ -869,15 +851,11 @@ body {
   z-index: 2;
 }
 
-/* =================================== */
-/* ===== STYLE UNTUK INFORMASI ACARA ===== */
-/* =================================== */
-
 .event-info-section {
   padding: 80px 20px;
   background-color: #f9f3e9;
   position: relative;
-  overflow: hidden; /* Sembunyikan hiasan bunga yang keluar dari section */
+  overflow: hidden;
 }
 
 .event-info-section h2 {
@@ -885,33 +863,27 @@ body {
   font-size: 2.5rem;
 }
 
-/* Posisi untuk hiasan bunga */
 .floral-decoration {
   position: absolute;
-  width: 350px; /* Sesuaikan ukuran */
+  width: 350px;
   opacity: 0.8;
   pointer-events: none;
-  z-index: 0; /* Ubah z-index agar di belakang konten frame */
+  z-index: 0;
 }
 
-/* Pojok Kanan Atas (BARU) */
 .floral-top-right {
   top: -100px;
   right: -95px;
-  /* Di-flip horizontal lalu diputar agar pas di sudut kanan */
   transform: scaleY(-1) scaleX(-1) rotate(10deg) !important;
 }
 
-/* Pojok Kiri Bawah (BARU) */
 .floral-bottom-left {
   bottom: -90px;
   left: -95px;
-  /* Hanya diputar sedikit, tidak perlu di-flip */
   transform: rotate(5deg) !important;
   z-index: 5;
 }
 
-/* Bingkai utama yang terinspirasi dari referensi */
 .event-frame {
   position: relative;
   max-width: 650px;
@@ -924,7 +896,6 @@ body {
   backdrop-filter: blur(5px);
 }
 
-/* Detail arsitektur pada bingkai */
 .event-frame::before,
 .event-frame::after {
   content: "";
@@ -944,7 +915,6 @@ body {
   bottom: -12px;
 }
 
-/* Styling untuk setiap kartu acara di dalam bingkai */
 .event-card {
   text-align: center;
 }
@@ -988,7 +958,6 @@ body {
   color: #8e6c88;
 }
 
-/* Garis pemisah antar acara */
 .event-separator {
   border: none;
   height: 1px;
@@ -996,7 +965,6 @@ body {
   margin: 35px 0;
 }
 
-/* Tombol Aksi */
 .event-actions {
   text-align: center;
   margin-top: 40px;
@@ -1018,7 +986,6 @@ body {
   font-size: 0.9rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3 ease;
 }
 
 .cta-button:hover {
@@ -1027,36 +994,33 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Ikon spinner (lingkaran berputar) */
 .button-loader {
-  display: none; /* Sembunyikan secara default */
+  display: none;
   width: 20px;
   height: 20px;
   border: 2px solid rgba(255, 255, 255, 0.7);
-  border-top-color: #fff; /* Membuat efek putaran */
+  border-top-color: #fff;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
 
-/* Ketika tombol dalam keadaan loading */
 .cta-button.is-loading {
-  background-color: #a5849e; /* Sedikit ubah warna saat loading */
+  background-color: #a5849e;
 }
 
 .cta-button.is-loading .button-text {
-  visibility: hidden; /* Sembunyikan teks asli */
+  visibility: hidden;
   opacity: 0;
 }
 
 .cta-button.is-loading .button-loader {
-  display: block; /* Tampilkan spinner */
-  position: absolute; /* Posisikan spinner di tengah tombol */
+  display: block;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-/* Animasi putaran untuk spinner */
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -1066,13 +1030,9 @@ body {
   }
 }
 
-/* =================================== */
-/* ===== STYLE UNTUK RSVP SECTION ===== */
-/* =================================== */
-
 .rsvp-section {
   padding: 80px 20px;
-  background-color: #fdfaf3; /* Warna sedikit beda untuk highlight */
+  background-color: #fdfaf3;
   text-align: center;
 }
 
@@ -1098,6 +1058,16 @@ body {
   font-weight: 600;
   color: #333;
   margin-bottom: 25px;
+}
+
+.gift-info {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rsvp-initial-choice .buttons {
@@ -1129,7 +1099,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* Styling untuk Form */
 .rsvp-form {
   text-align: left;
 }
@@ -1179,7 +1148,6 @@ body {
   margin-top: 10px;
 }
 
-/* Styling untuk info hadiah/rekening */
 .gift-intro {
   text-align: center;
   line-height: 1.6;
@@ -1263,7 +1231,35 @@ body {
   border-color: #ccc;
 }
 
-/* Pesan Sukses */
+.gift-steps {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+  padding: 15px;
+  background-color: #f9f3e9;
+  border-radius: 8px;
+  border: 1px dashed #e0d1c1;
+}
+
+.steps-title {
+  font-weight: 600;
+  color: #8e6c88;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.steps-list {
+  list-style-position: inside;
+  padding-left: 5px;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.steps-list li {
+  margin-bottom: 5px;
+}
+
 .rsvp-success-message {
   padding: 20px;
 }
@@ -1291,10 +1287,6 @@ body {
   font-weight: 600;
   color: #8e6c88;
 }
-
-/* =================================== */
-/* =====     STYLE UNTUK FOOTER    ===== */
-/* =================================== */
 
 .wedding-footer {
   padding: 80px 20px;
@@ -1376,8 +1368,17 @@ body {
   color: #8e6c88;
 }
 
-/* Music Control */
 .music-control {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.5s ease-in-out;
+}
+
+.music-control.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -1413,7 +1414,6 @@ body {
   transform: rotate(360deg);
 }
 
-/* Transition Animation Classes */
 .hide-envelope {
   opacity: 0;
   transform: translateY(-50px);
@@ -1436,7 +1436,6 @@ body {
   display: block;
 }
 
-/* Confetti */
 .confetti {
   position: absolute;
   width: 10px;
@@ -1445,7 +1444,6 @@ body {
   opacity: 0;
 }
 
-/* Responsive untuk HP */
 @media (max-width: 990px) {
   .profile-separator {
     display: none;
@@ -1455,7 +1453,6 @@ body {
   }
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .envelope-wrapper {
     width: 250px;
@@ -1471,9 +1468,7 @@ body {
   }
 
   .wedding-header {
-    background-size: cover;
-    background-position: -15.5rem;
-    scale: 1;
+    background-position: -12rem;
   }
 
   .wedding-title {
@@ -1505,31 +1500,28 @@ body {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr); /* Basis 2 kolom */
-    gap: 15px; /* Jarak antar item */
-    /* Hapus tinggi tetap agar bisa mengalir ke bawah */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
     height: auto;
   }
 
-  /* Atur ulang semua item agar tidak full-width */
   .gallery-grid .item-1,
   .gallery-grid .item-2,
   .gallery-grid .item-3,
   .gallery-grid .item-4,
   .gallery-grid .item-5,
   .gallery-grid .item-6 {
-    grid-column: auto / span 1; /* Setiap item hanya memakan 1 kolom */
+    grid-column: auto / span 1;
     grid-row: auto;
-    margin-top: 0; /* Hapus semua margin negatif */
-    aspect-ratio: 1 / 1.25; /* Jaga rasio aspek foto agar konsisten */
+    margin-top: 0;
+    aspect-ratio: 1 / 1.25;
   }
 
-  /* Beri sentuhan artistik pada setiap foto */
   .gallery-grid .item-1 {
     transform: rotate(-6deg);
   }
   .gallery-grid .item-2 {
-    transform: rotate(5deg) translateY(20px); /* Geser sedikit ke bawah */
+    transform: rotate(5deg) translateY(20px);
   }
   .gallery-grid .item-3 {
     transform: rotate(7deg);
@@ -1544,7 +1536,6 @@ body {
     transform: rotate(4deg) translateY(25px);
   }
 
-  /* Tetap sembunyikan foto sisa dan teks */
   .gallery-grid .item-7,
   .gallery-grid .item-8,
   .gallery-grid .item-9,
@@ -1554,7 +1545,7 @@ body {
   }
 
   .floral-decoration {
-    width: 200px; /* Perkecil di HP */
+    width: 200px;
   }
 
   .floral-top-right {
@@ -1600,6 +1591,10 @@ body {
 
   .intro-text {
     font-size: 1.2rem;
+  }
+
+  .wedding-header {
+    background-position: -12rem;
   }
 
   .wedding-title {
