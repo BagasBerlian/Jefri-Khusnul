@@ -10,14 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const invitationCard = document.querySelector(".invitation-card");
   const openBtn = document.querySelector(".open-invitation-btn");
   const musicToggle = document.getElementById("music-toggle");
-  const musicControl = document.querySelector(".music-control"); // BARU
+  const musicControl = document.querySelector(".music-control");
   const weddingMusic = document.getElementById("wedding-music");
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // ===============================================
-  // === BAGIAN 3: LOGIKA LOCAL STORAGE & SKIP INTRO
-  // ===============================================
   function checkSessionAndStart() {
     const twoDaysInMillis = 2 * 24 * 60 * 60 * 1000;
     const sessionData = localStorage.getItem("weddingInvitationOpened");
@@ -27,20 +24,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const now = new Date().getTime();
 
       if (now - timestamp < twoDaysInMillis) {
-        // Jika sesi masih valid, langsung ke halaman utama
         gsap.to(loadingScreen, {
           duration: 1,
           opacity: 0,
           onComplete: () => {
             loadingScreen.style.display = "none";
-            showLandingPage(true); // 'true' menandakan ini adalah skip
+            showLandingPage(true); // Langsung ke halaman utama
           },
         });
-        return; // Hentikan fungsi
+        return;
       }
     }
 
-    // Jika tidak ada sesi, jalankan alur normal
+    // Alur normal jika tidak ada sesi
     initLoading();
   }
 
@@ -67,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initApp() {
     createFloatingHearts();
-    setupMusicPlayer();
-    guestName();
     setupEnvelope();
     setupInvitationCard();
   }
@@ -100,16 +94,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function setupMusicPlayer() {
-    musicToggle.addEventListener("click", function () {
-      if (weddingMusic.paused) {
-        weddingMusic.play();
-        musicToggle.innerHTML = '<i class="fas fa-music"></i> Hentikan Musik';
-      } else {
-        weddingMusic.pause();
-        musicToggle.innerHTML = '<i class="fas fa-music"></i> Putar Musik';
+  function toggleMusicPlayback() {
+    if (weddingMusic.paused) {
+      const playPromise = weddingMusic.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then((_) => {
+            musicToggle.innerHTML =
+              '<i class="fas fa-music"></i> Hentikan Musik';
+          })
+          .catch((error) => {
+            console.error("Autoplay diblokir oleh browser:", error);
+            musicToggle.innerHTML = '<i class="fas fa-music"></i> Putar Musik';
+          });
       }
-    });
+    } else {
+      weddingMusic.pause();
+      musicToggle.innerHTML = '<i class="fas fa-music"></i> Putar Musik';
+    }
+  }
+
+  function setupMusicPlayer() {
+    musicToggle.addEventListener("click", toggleMusicPlayback);
   }
 
   function guestName() {
@@ -197,21 +203,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openInvitation() {
-    // =========================================================
-    // === BAGIAN 3: SET LOCAL STORAGE SAAT UNDANGAN DIBUKA ===
-    // =========================================================
     const sessionData = { timestamp: new Date().getTime() };
     localStorage.setItem(
       "weddingInvitationOpened",
       JSON.stringify(sessionData)
     );
 
-    // Putar musik secara otomatis & tampilkan tombol
-    if (weddingMusic.paused) {
-      weddingMusic.play();
-      musicToggle.innerHTML = '<i class="fas fa-music"></i> Hentikan Musik';
-    }
-    musicControl.classList.add("show"); // BARU: Tampilkan tombol musik
+    musicControl.classList.add("show");
+    toggleMusicPlayback();
 
     createConfetti();
     gsap.to(invitationCard, {
@@ -230,14 +229,10 @@ document.addEventListener("DOMContentLoaded", function () {
     weddingLanding.style.display = "block";
 
     if (isSkippingIntro) {
-      // Jika skip, langsung tampilkan halaman tanpa animasi fade
       weddingLanding.style.opacity = 1;
-      // Putar musik dan tampilkan tombol
-      if (weddingMusic.paused) {
-        weddingMusic.play();
-        musicToggle.innerHTML = '<i class="fas fa-music"></i> Hentikan Musik';
-      }
       musicControl.classList.add("show");
+      // UBAH: Mencoba memutar musik secara otomatis untuk tamu yang kembali
+      toggleMusicPlayback();
     }
 
     gsap.fromTo(
@@ -362,8 +357,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function animateLandingContent() {
+    // UBAH: Memanggil fungsi setup penting di sini
+    guestName();
+    setupMusicPlayer();
     startCountdown();
     setupRSVPForm();
+
     setTimeout(() => {
       AOS.init({ duration: 1000, once: true });
     }, 100);
@@ -404,5 +403,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Pemanggilan awal aplikasi
   checkSessionAndStart();
 });
