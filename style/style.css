@@ -5,13 +5,18 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #f9f3e9;
   color: #333;
-  overflow-x: hidden;
   min-height: 100vh;
   background-image: url("../assets/bg-paper.png");
+  position: relative;
 }
 
 /* Loading Screen */
@@ -100,7 +105,6 @@ body {
 /* Envelope Styles */
 .envelope-section,
 .invitation-card-section {
-  /* wedding-landing dihapus dari sini */
   position: fixed;
   top: 0;
   left: 0;
@@ -416,13 +420,13 @@ body {
   opacity: 0;
   display: none;
   background-color: #f9f3e9;
-  position: relative; /* Diubah dari fixed */
+  position: relative;
 }
 
 .wedding-header {
   text-align: center;
   padding: 100px 20px;
-  background-image: url("../assets/header-4.jpg");
+  background-image: url("../assets/header-3.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
@@ -521,7 +525,6 @@ body {
   align-items: center;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  opacity: 0;
 }
 
 .scroll-indicator .mouse {
@@ -1369,20 +1372,10 @@ body {
 }
 
 .music-control {
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.8);
-  transition: all 0.5s ease-in-out;
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 100;
-}
-
-.music-control.show {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
 }
 
 #music-toggle {
@@ -1468,7 +1461,9 @@ body {
   }
 
   .wedding-header {
-    background-position: -12rem;
+    background-size: cover;
+    background-position: -15.5rem;
+    scale: 1;
   }
 
   .wedding-title {
@@ -1591,10 +1586,6 @@ body {
 
   .intro-text {
     font-size: 1.2rem;
-  }
-
-  .wedding-header {
-    background-position: -12rem;
   }
 
   .wedding-title {
