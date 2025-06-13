@@ -1,4 +1,3 @@
-/* Reset dan Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@ body {
   position: relative;
 }
 
-/* Loading Screen */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -102,7 +100,6 @@ body {
   }
 }
 
-/* Envelope Styles */
 .envelope-section,
 .invitation-card-section {
   position: fixed;
@@ -227,7 +224,6 @@ body {
   }
 }
 
-/* Floating Hearts */
 .hearts {
   position: absolute;
   width: 100%;
@@ -275,7 +271,6 @@ body {
   }
 }
 
-/* Invitation Card Styles */
 .invitation-card {
   position: relative;
   width: 90%;
@@ -415,7 +410,6 @@ body {
   left: 100%;
 }
 
-/* Wedding Landing Page Styles */
 .wedding-landing {
   opacity: 0;
   display: none;
@@ -426,7 +420,7 @@ body {
 .wedding-header {
   text-align: center;
   padding: 100px 20px;
-  background-image: url("../assets/header-3.jpg");
+  background-image: url("../assets/header-4.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
@@ -482,7 +476,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* Countdown Timer Styles */
 .countdown-timer {
   display: flex;
   justify-content: center;
@@ -1376,6 +1369,14 @@ body {
   bottom: 20px;
   right: 20px;
   z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.music-control.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 #music-toggle {
@@ -1461,9 +1462,7 @@ body {
   }
 
   .wedding-header {
-    background-size: cover;
     background-position: -15.5rem;
-    scale: 1;
   }
 
   .wedding-title {

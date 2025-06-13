@@ -15,28 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  function checkSessionAndStart() {
-    const twoDaysInMillis = 2 * 24 * 60 * 60 * 1000;
-    const sessionData = localStorage.getItem("weddingInvitationOpened");
-
-    if (sessionData) {
-      const { timestamp } = JSON.parse(sessionData);
-      const now = new Date().getTime();
-
-      if (now - timestamp < twoDaysInMillis) {
-        gsap.to(loadingScreen, {
-          duration: 1,
-          opacity: 0,
-          onComplete: () => {
-            loadingScreen.style.display = "none";
-            showLandingPage(true); // Langsung ke halaman utama
-          },
-        });
-        return;
-      }
-    }
-
-    // Alur normal jika tidak ada sesi
+  function startApp() {
     initLoading();
   }
 
@@ -62,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function initApp() {
+    guestName();
     createFloatingHearts();
     setupEnvelope();
     setupInvitationCard();
@@ -203,12 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openInvitation() {
-    const sessionData = { timestamp: new Date().getTime() };
-    localStorage.setItem(
-      "weddingInvitationOpened",
-      JSON.stringify(sessionData)
-    );
-
     musicControl.classList.add("show");
     toggleMusicPlayback();
 
@@ -225,19 +199,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function showLandingPage(isSkippingIntro = false) {
+  function showLandingPage() {
     weddingLanding.style.display = "block";
-
-    if (isSkippingIntro) {
-      weddingLanding.style.opacity = 1;
-      musicControl.classList.add("show");
-      // UBAH: Mencoba memutar musik secara otomatis untuk tamu yang kembali
-      toggleMusicPlayback();
-    }
-
     gsap.fromTo(
       weddingLanding,
-      { opacity: isSkippingIntro ? 1 : 0 },
+      { opacity: 0 },
       {
         opacity: 1,
         duration: 1,
@@ -357,8 +323,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function animateLandingContent() {
-    // UBAH: Memanggil fungsi setup penting di sini
-    guestName();
     setupMusicPlayer();
     startCountdown();
     setupRSVPForm();
@@ -403,6 +367,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Pemanggilan awal aplikasi
-  checkSessionAndStart();
+  startApp();
 });
